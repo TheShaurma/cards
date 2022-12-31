@@ -1,7 +1,7 @@
-import logic.cards.CardDeck;
+import logic.cards.FoolsDeck;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(new CardDeck());
+        System.out.println(new FoolsDeck());
     }
 }
