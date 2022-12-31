@@ -1,6 +1,7 @@
 package logic.cards;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Class of cards deck for game.
@@ -13,20 +14,25 @@ public class CardDeck {
      */
     public CardDeck() {
         cardsList = CardsGenerator.getCardsList();
+        Collections.shuffle(cardsList);
     }
 
     /**
+     * Return card and remove it from deck.
      * 
-     * @return
+     * @return card from deck.
      */
     public Card takeCard() {
-        // TODO: stub
-        return new Card(null, null);
+        Card result = cardsList.get(0);
+        cardsList.remove(0);
+
+        return result;
     }
 
     @Override
     public String toString() {
         String result = "CardDeck(\n";
+        result += "  Count: " + cardsList.size() + ";\n";
         for (Card card : cardsList) {
             result += "  " + card + ";\n";
         }
